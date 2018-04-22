@@ -11,12 +11,12 @@ var addnote=(title,body)=>{
 console.log('adding note :',title,body);
 };
 
-var getAll= () => {
-console.log('getting all  notes');
+var getAll = () => {
+  console.log('Getting all notes');
 };
 
 module.exports={
-  addnote
+  addnote,
   getAll
 
 };
