@@ -24,6 +24,14 @@ else if (command === 'list') {
   console.log('list');
   notes.getAll();
 }
+else if (command === 'read') {
+  console.log('read');
+  notes.read(argv.title);
+}
+else if (command === 'remove') {
+  console.log('remove');
+  notes.remove(argv.title);
+}
 else {
   console.log('nothing');
 }
