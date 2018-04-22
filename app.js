@@ -6,6 +6,7 @@ const notes=require('./notes.js');
 const _=require('lodash');
 
 var command = process.argv[2];
+//hi
 console.log(command);
 
 if(command === 'add')
