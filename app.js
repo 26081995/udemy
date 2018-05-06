@@ -8,8 +8,8 @@ const yargs=require('yargs');
 
 const argv=yargs.argv;
 
-console.log('process',process.argv)
-console.log('yargs',yargs.argv)
+console.log('process',process.argv);
+console.log('yargs',yargs.argv);
 
 var command = process.argv[2];
 //hi
@@ -17,8 +17,12 @@ console.log(command);
 
 if(command === 'add')
 {
-  notes.addnote(argv.title,argv.body);
-  console.log('add');
+  var note=notes.addnote(argv.title,argv.body);
+  if (note) {
+    console.log('note taken');
+    console.log(`title ${note.title}`)
+  }
+  //console.log('add');
 }
 else if (command === 'list') {
   console.log('list');

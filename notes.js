@@ -9,17 +9,50 @@ module.exports.addnote=()=>{
 
 const fs=require('fs');
 
+var fetchNotes =()=>{
+  try {
+    var notestring=fs.readFileSync('notes-data.json');
+    return JSON.parse(notestring);
+  } catch (e) {
+    return [];
+  }
+};
+
+var saveNotes =(notes)=>{
+  fs.writeFileSync('notes-data.json',JSON.stringify(notes));
+};
+
+
 var addnote=(title,body)=>{
 //console.log('adding note :',title,body);
 
-var notes=[];
+//var notes=[];
+var notes=fetchNotes();
   var note={
       title,
       body
   };
+
+/*try {
+  var notestring=fs.readFileSync('notes-data.json');
+
+  notes=JSON.parse(notestring);
+} catch (e) {
+
+}*/
+
+var duplicatenote = notes.filter((note) => note.title===title);
+
+if(duplicatenote.length===0)
+{
   notes.push(note);
 
-  fs.writeFileSync('notes-data.json',JSON.stringify(notes)); 
+  saveNotes(notes);
+  return note;
+  //fs.writeFileSync('notes-data.json',JSON.stringify(notes));
+}
+
+
 };
 
 var getAll = () => {
