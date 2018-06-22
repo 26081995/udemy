@@ -64,7 +64,14 @@ console.log('adding note :',title);
 };
 
 var remove=(title)=>{
-console.log('adding note :',title);
+//console.log('adding note :',title);
+
+var notes =fetchNotes();
+var filterednotes = notes.filter((note) => note.title !== title);
+saveNotes(filterednotes);
+
+return notes.length !== filterednotes.length;
+
 };
 
 module.exports={
