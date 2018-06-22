@@ -34,7 +34,15 @@ else if (command === 'list') {
 }
 else if (command === 'read') {
   console.log('read');
-  notes.read(argv.title);
+  var note=notes.read(argv.title);
+  if (note) {
+    console.log('note FOUNDd');
+    console.log(`title ${note.body}`)
+  }
+  else
+  {
+    console.log('note not found');
+  }
 }
 else if (command === 'remove') {
   console.log('remove');

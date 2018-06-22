@@ -60,7 +60,11 @@ var getAll = () => {
 };
 
 var read=(title)=>{
-console.log('adding note :',title);
+  var notes =fetchNotes();
+  var filterednotes = notes.filter((note) => note.title === title);
+  return filterednotes[0];
+
+
 };
 
 var remove=(title)=>{
