@@ -17,8 +17,8 @@ console.log(str);
 const fs=require('fs');
 
 var originalNote={
-  title:"title",
-  body:"body"
+  title,
+  body
 };
 
 var originalNoteString=JSON.stringify(originalNote);

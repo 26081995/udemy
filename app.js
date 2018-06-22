@@ -19,8 +19,12 @@ if(command === 'add')
 {
   var note=notes.addnote(argv.title,argv.body);
   if (note) {
-    console.log('note taken');
+    console.log('note crreated');
     console.log(`title ${note.title}`)
+  }
+  else
+  {
+    console.log('note taken');
   }
   //console.log('add');
 }
