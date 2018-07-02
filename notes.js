@@ -56,6 +56,8 @@ if(duplicatenote.length===0)
 };
 
 var getAll = () => {
+
+  return fetchNotes();
   console.log('Getting all notes');
 };
 
@@ -78,10 +80,19 @@ return notes.length !== filterednotes.length;
 
 };
 
+var logNote = (note) => {
+  console.log('--');
+  console.log(`Title: ${note.title}`);
+  console.log(`Body: ${note.body}`);
+};
+
+
+
 module.exports={
   addnote,
   getAll,
   read,
-  remove
+  remove,
+  logNote
 
 };
