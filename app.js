@@ -1,4 +1,4 @@
-console.log('starting app');
+console.log('starting app1');
 
 const fs=require('fs');
 const notes=require('./notes.js');
